@@ -1,4 +1,4 @@
-import prisma from "../db/db.config.js";
+import prisma from "../db/db.config";
 import { Request, Response } from "express";
 
 export const createBook = async (req: Request, res: Response) => {
@@ -11,8 +11,8 @@ export const createBook = async (req: Request, res: Response) => {
   await prisma.book.create({
     data: {
       title: title,
-      authorID: authorID,
-      genreID: genreID,
+      authorId: authorID,
+      genreId: genreID,
       summary: summary,
       ISBN: isbn,
     },

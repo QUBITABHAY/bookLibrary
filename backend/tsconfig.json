@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2019",
-    "module": "nodenext",
-    "rootDir": "./src",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "rootDir": ".",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "moduleResolution": "nodenext",
     "skipLibCheck": true,
     "types": ["node", "express"]
   },
-  "include": ["src/**/*"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

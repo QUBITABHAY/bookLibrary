@@ -1,4 +1,4 @@
-import prisma from "../db/db.config.js";
+import prisma from "../db/db.config";
 import { Request, Response } from "express";
 
 export const createAuthor = async (req: Request, res: Response) => {
