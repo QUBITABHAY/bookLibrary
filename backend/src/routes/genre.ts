@@ -10,12 +10,12 @@ export const createGenre = async (req: Request, res: Response) => {
 
   const alreadyExists = await prisma.genre.findFirst({
     where: {
-      name: name
-    }
-  })
+      name: name,
+    },
+  });
 
   if (alreadyExists) {
-    res.send("Already Exists")
+    res.send("Already Exists");
   }
 
   await prisma.genre.create({
@@ -23,4 +23,6 @@ export const createGenre = async (req: Request, res: Response) => {
       name: name,
     },
   });
+
+  res.send("Successfully Created");
 };
