@@ -32,3 +32,24 @@ export const getGenre = async (req: Request, res: Response) => {
 
   res.json(data);
 };
+
+export const deleteGenre = async (req: Request, res: Response) => {
+  const { id, name } = req.body;
+
+  const get = await prisma.genre.findUnique({
+    where: {
+      id: id,
+      name: name,
+    },
+  });
+
+  if (!get) {
+    res.send("This not exist");
+  }
+
+  await prisma.genre.delete({
+    where: {
+      id: id,
+    },
+  });
+};
