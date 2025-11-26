@@ -8,7 +8,7 @@ export const createBook = async (req: Request, res: Response) => {
     res.send("All feids required");
   }
 
-  const alreadyExists = await prisma.book.find({
+  const alreadyExists = await prisma.book.findFirst({
     where: {
       title: title,
     },
