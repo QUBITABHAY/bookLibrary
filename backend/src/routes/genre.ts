@@ -26,3 +26,9 @@ export const createGenre = async (req: Request, res: Response) => {
 
   res.send("Successfully Created");
 };
+
+export const getGenre = async (req: Request, res: Response) => {
+  const data = await prisma.genre.findMany();
+
+  res.json(data);
+};
